@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	function VehicleConstructor(name, numOfWheels, numOfPassengers) {
+		var vehicle = {};
+		vehicle.name = name;
+		vehicle.numOfWheels = numOfWheels;
+		vehicle.numOfPassengers = numOfPassengers;
+		vehicle.info = function() { 
+			console.log("This vehicle is a " + vehicle.name + ". It has " + vehicle.numOfWheels + " wheels and can fit up to " + vehicle.numOfPassengers + " passengers"); 
+		}
+		return vehicle;
+	}
+
+	var sedan = VehicleConstructor('Camry',4, 2);
+	console.log(sedan.numOfPassengers);
+	sedan.info();	
+	sedan.pickUpPassengers = function(num){ this.numOfPassengers += num; }
+	sedan.pickUpPassengers(3);
+	console.log(sedan.numOfPassengers);
+</script>
